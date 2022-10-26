@@ -11,6 +11,7 @@
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:id="@+id/navigation"
+        android:background="@drawable/curve_background"
         android:layout_gravity="start"
         app:menu="@menu/navigation_bar"
         app:headerLayout="@layout/header_navigation">
@@ -22,10 +23,23 @@
         android:layout_height="match_parent">
 
         <LinearLayout
+            android:id="@+id/LLback"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/curve_background"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"></LinearLayout>
+
+        <LinearLayout
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?actionBarSize"
-            android:background="@color/purple_200"
+            android:background="#3995BC"
+
+            android:paddingBottom="10dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1.0"
@@ -34,23 +48,22 @@
             app:layout_constraintVertical_bias="0.0">
 
             <ImageView
-                android:id="@+id/d1"
-                android:layout_width="49dp"
-                android:layout_height="match_parent"
-                android:src="@drawable/ic_baseline_dehaze_24">
-            </ImageView>
+                android:id="@+id/dehaze"
+                android:layout_gravity="center"
+                android:layout_width="40dp"
+                android:layout_height="35dp"
+                android:src="@drawable/ic_baseline_dehaze_24"></ImageView>
         </LinearLayout>
 
         <LinearLayout
             android:id="@+id/LL1"
             android:layout_width="409dp"
             android:layout_height="190dp"
-            android:layout_margin="10dp"
-            android:layout_marginStart="1dp"
-            android:layout_marginTop="1dp"
-            android:layout_marginEnd="1dp"
-            android:layout_marginBottom="1dp"
+            android:layout_margin="5dp"
+            android:padding="10dp"
+            android:background="@drawable/curve_white"
             android:orientation="vertical"
+            android:paddingTop="10dp"
             app:layout_constraintBottom_toTopOf="@+id/LL2"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -60,10 +73,11 @@
             android:id="@+id/LL2"
             android:layout_width="409dp"
             android:layout_height="482dp"
-            android:layout_marginStart="1dp"
-            android:layout_marginTop="1dp"
-            android:layout_marginEnd="1dp"
-            android:layout_marginBottom="1dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginBottom="5dp"
+            android:padding="10dp"
             android:orientation="vertical"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -74,12 +88,14 @@
                 android:id="@+id/S1"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_margin="5dp">
+                android:layout_margin="5dp"
+                android:background="@drawable/curve_white">
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical" />
+<!--                <LinearLayout-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:orientation="vertical"-->
+<!--                    />-->
             </ScrollView>
         </LinearLayout>
 
