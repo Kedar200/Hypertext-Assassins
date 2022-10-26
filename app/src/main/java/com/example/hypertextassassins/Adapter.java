@@ -3,12 +3,11 @@ package com.example.hypertextassassins;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
-//login adapter to switch between signin and signup tab
 
-public class PagerAdapter extends FragmentStateAdapter {
+public class Adapter extends FragmentStateAdapter {
     private String[] titles = new String[]{"Log In","Sign Up"};
 
-    public PagerAdapter(@NonNull LoginActivity fragment) {
+    public Adapter(@NonNull LoginActivity fragment) {
         super(fragment);
     }
 
