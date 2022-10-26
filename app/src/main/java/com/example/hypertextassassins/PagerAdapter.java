@@ -1,7 +1,5 @@
-package com.example.hypeetextassisans;
+package com.example.hypertextassassins;
 
-import androidx.annotation.FloatRange;
-import androidx.annotation.FractionRes;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.viewpager2.adapter.FragmentStateAdapter;

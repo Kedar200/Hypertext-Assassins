@@ -1,4 +1,5 @@
-package com.example.hypeetextassisans;
+package com.example.hypertextassassins;
+
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;

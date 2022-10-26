@@ -1,4 +1,4 @@
-package com.example.hypeetextassisans;
+package com.example.hypertextassassins;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 

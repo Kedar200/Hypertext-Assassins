@@ -1,5 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Sem 3/CS201/HypertextAssassins/app/src/main/res/drawable/edit_text_bg.xml" value="0.22" />
+        <entry key="..\:/Sem 3/CS201/HypertextAssassins/app/src/main/res/drawable/ic_baseline_handyman_24.xml" value="0.22" />
+        <entry key="..\:/Sem 3/CS201/HypertextAssassins/app/src/main/res/drawable/ic_baseline_home_24.xml" value="0.22" />
+        <entry key="..\:/Sem 3/CS201/HypertextAssassins/app/src/main/res/drawable/ic_baseline_info_24.xml" value="0.22" />
+        <entry key="..\:/Sem 3/CS201/HypertextAssassins/app/src/main/res/drawable/ic_baseline_logout_24.xml" value="0.176" />
+        <entry key="..\:/Sem 3/CS201/HypertextAssassins/app/src/main/res/drawable/ic_launcher_background.xml" value="0.22" />
+        <entry key="..\:/Sem 3/CS201/HypertextAssassins/app/src/main/res/drawable/vie_bg.xml" value="0.22" />
+        <entry key="..\:/Sem 3/CS201/HypertextAssassins/app/src/main/res/layout/activity_introductory.xml" value="0.25" />
+        <entry key="..\:/Sem 3/CS201/HypertextAssassins/app/src/main/res/layout/activity_login.xml" value="0.25" />
+        <entry key="..\:/Sem 3/CS201/HypertextAssassins/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/Sem 3/CS201/HypertextAssassins/app/src/main/res/layout/custom_editext.xml" value="0.25" />
+        <entry key="..\:/Sem 3/CS201/HypertextAssassins/app/src/main/res/layout/dashboard.xml" value="0.24895833333333334" />
+        <entry key="..\:/Sem 3/CS201/HypertextAssassins/app/src/main/res/layout/header_navigation.xml" value="0.25" />
+        <entry key="..\:/Sem 3/CS201/HypertextAssassins/app/src/main/res/layout/login_tab_fragment.xml" value="0.25" />
+        <entry key="..\:/Sem 3/CS201/HypertextAssassins/app/src/main/res/layout/signup_tab_fragment.xml" value="0.25" />
+        <entry key="..\:/Sem 3/CS201/HypertextAssassins/app/src/main/res/menu/navigation_bar.xml" value="0.10989583333333333" />
+      </map>
+    </option>
+  </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>

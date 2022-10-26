@@ -1,4 +1,4 @@
-package com.example.hypeetextassisans;
+package com.example.hypertextassassins;
 
 import androidx.appcompat.app.AppCompatActivity;
 
