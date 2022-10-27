@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "273832923977",
+    "project_id": "hypertext-assassins-fcee8",
+    "storage_bucket": "hypertext-assassins-fcee8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:273832923977:android:83b6456b9d6f65d07c4098",
+        "android_client_info": {
+          "package_name": "com.example.hypertextassassins"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "273832923977-d6ochnoc2ubbqarrjh5726t53lu9d38p.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.hypertextassassins",
+            "certificate_hash": "76837cc0217c4875d2d75375d23027432f14ce58"
+          }
+        },
+        {
+          "client_id": "273832923977-gf6n6fjaogokc5fg9g7svmi5n1p2s2vq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCy4hpe3A9jfNjKMWTRueGqUg53WlEEIAM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "273832923977-gf6n6fjaogokc5fg9g7svmi5n1p2s2vq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
