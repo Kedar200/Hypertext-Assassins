@@ -13,7 +13,6 @@ public class dashboard extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.dashboard);
 
-
         if (getSupportActionBar() != null) {
             getSupportActionBar().hide();
         }
