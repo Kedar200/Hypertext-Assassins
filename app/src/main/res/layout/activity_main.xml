@@ -35,7 +35,7 @@
         android:id="@+id/appname"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:background="@color/transparent"
+        android:background="@color/trans"
         android:fontFamily="monospace"
         android:text="HyperText Assassins"
         android:textAlignment="center"

@@ -15,12 +15,13 @@ import androidx.fragment.app.Fragment;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
 public class LoginTabFragment extends Fragment {
-    EditText studentid,password;
+    TextInputLayout studentid,password;
     TextView forgetpasss;
     Button login;
     FirebaseAuth auth;
@@ -45,8 +46,8 @@ public class LoginTabFragment extends Fragment {
         String pass = new String();
         LoginActivity.a.setVisibility(View.VISIBLE);
         Intent Dashboard_intent=new Intent(getActivity(),dashboard.class);
-        email=studentid.getText().toString()+"@iiitvadodara.ac.in";
-        pass =password.getText().toString();
+        email=studentid.getEditText().getText().toString()+"@iiitvadodara.ac.in";
+        pass =password.getEditText().getText().toString();
         auth.signInWithEmailAndPassword(email, pass).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
@@ -61,6 +62,7 @@ public class LoginTabFragment extends Fragment {
                     }
                 }
                 else{
+                    LoginActivity.a.setVisibility(View.INVISIBLE);
                     Toast.makeText(getActivity(),"Something went wrong",Toast.LENGTH_SHORT).show();
                 }
             }
