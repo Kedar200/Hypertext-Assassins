@@ -6,7 +6,10 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
+import android.view.View;
+import android.widget.TextView;
 
+import com.airbnb.lottie.LottieAnimationView;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
@@ -25,6 +28,8 @@ public class MainActivity extends AppCompatActivity {
     FirebaseAuth mAuth;
     FirebaseDatabase database;
     String TAG="Hello";
+    LottieAnimationView assassin;
+    TextView logoheader;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,8 +46,10 @@ public class MainActivity extends AppCompatActivity {
 
         FirebaseUser currentUser = mAuth.getCurrentUser();
         getSupportActionBar().hide();
-
-
+        logoheader=findViewById(R.id.logoheader);
+        assassin= findViewById(R.id.assassin);
+        assassin.animate().setDuration(3000);
+        fadee();
 
         db.collection("User").document("user2")
                 .set(new User("gaja","Suraj","panya"))
@@ -74,7 +81,16 @@ public class MainActivity extends AppCompatActivity {
                 }
 
             }
-        }, 2000);
+        }, 3000);
 
+    }
+    private void fadee()
+    {   logoheader.animate().translationY(100).setDuration(3000);
+        logoheader.setVisibility(View.VISIBLE);
+        logoheader.postDelayed(new Runnable() {
+            public void run() {
+                logoheader.setVisibility(View.INVISIBLE);
+            }
+        }, 3000);
     }
 }
