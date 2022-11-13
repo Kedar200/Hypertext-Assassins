@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.hypertextassassins">
-<uses-permission android:name="android.permission.INTERNET"></uses-permission>
+
     <supports-screens>
         android:resizeable="true"
         android:smallScreens="true"
@@ -26,7 +26,11 @@
             android:name=".LoginActivity"
             android:exported="false" />
         <activity
-            android:name=".dashboard"></activity>
+            android:name=".IntroductoryActivity"
+            android:exported="true"></activity>
+        <activity
+            android:name=".dashboard"
+            android:parentActivityName=".IntroductoryActivity"></activity>
         <activity
             android:name=".MainActivity"
             android:exported="true">
