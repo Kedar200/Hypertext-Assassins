@@ -25,12 +25,10 @@
         <activity
             android:name=".LoginActivity"
             android:exported="false" />
-        <activity
-            android:name=".IntroductoryActivity"
-            android:exported="true"></activity>
+
         <activity
             android:name=".dashboard"
-            android:parentActivityName=".IntroductoryActivity"></activity>
+            android:exported="true"></activity>
         <activity
             android:name=".MainActivity"
             android:exported="true">
@@ -40,6 +38,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity android:name=".Login"
+            android:exported="true"></activity>
+
+        <activity android:name=".Signup"
+            android:exported="true"></activity>
     </application>
 
 </manifest>
