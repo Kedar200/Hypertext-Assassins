@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
     LottieAnimationView assassin;
     TextView logoheader;
 
-     @Override
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
@@ -40,6 +40,8 @@ public class MainActivity extends AppCompatActivity {
         Handler handler = new Handler();
         Intent Dashboard_intent = new Intent(this, dashboard.class);
         Intent Sign_in_intent=new Intent(this, LoginActivity.class);
+        Intent hostel_management_Intent=new Intent(this,hostelmanagement.class);
+
 
         FirebaseUser currentUser = mAuth.getCurrentUser();
         getSupportActionBar().hide();
@@ -59,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
                     finish();
                 } else {
                     Log.d("Hello", "Not Logged in");
-                    startActivity(Dashboard_intent);
+                    startActivity(hostel_management_Intent);
                     finish();
                 }
 
