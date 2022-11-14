@@ -25,10 +25,16 @@
         <activity
             android:name=".LoginActivity"
             android:exported="false" />
-
-        <activity
+  <activity
             android:name=".dashboard"
             android:exported="true"></activity>
+        <activity
+            android:name=".complainform"
+            android:exported="true"></activity>
+        <activity
+            android:name=".hostelmanagement"
+            android:exported="true"></activity>
+
         <activity
             android:name=".MainActivity"
             android:exported="true">

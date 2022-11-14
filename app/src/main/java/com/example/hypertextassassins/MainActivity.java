@@ -36,13 +36,12 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        FirebaseFirestore db = FirebaseFirestore.getInstance();
-        CollectionReference usersCollectionRef = db.collection("Database");
-        DocumentReference alovelaceDocumentRef = db.document("Database/Users");
         mAuth=FirebaseAuth.getInstance();
         Handler handler = new Handler();
         Intent Dashboard_intent = new Intent(this, dashboard.class);
         Intent Sign_in_intent=new Intent(this, LoginActivity.class);
+        Intent hostel_management_Intent=new Intent(this,hostelmanagement.class);
+
 
         FirebaseUser currentUser = mAuth.getCurrentUser();
         getSupportActionBar().hide();
@@ -51,20 +50,6 @@ public class MainActivity extends AppCompatActivity {
         assassin.animate().setDuration(3000);
         fadee();
 
-        db.collection("User").document("user2")
-                .set(new User("gaja","Suraj","panya"))
-                .addOnSuccessListener(new OnSuccessListener<Void>() {
-                    @Override
-                    public void onSuccess(Void aVoid) {
-                        Log.d(TAG, "DocumentSnapshot successfully written!");
-                    }
-                })
-                .addOnFailureListener(new OnFailureListener() {
-                    @Override
-                    public void onFailure(Exception e) {
-                        Log.w(TAG, "Error writing document", e);
-                    }
-                });
 
 
 
@@ -76,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
                     finish();
                 } else {
                     Log.d("Hello", "Not Logged in");
-                    startActivity(Sign_in_intent);
+                    startActivity(hostel_management_Intent);
                     finish();
                 }
 
