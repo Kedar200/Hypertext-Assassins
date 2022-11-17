@@ -44,7 +44,6 @@ public class LoginTabFragment extends Fragment {
     public void sign_up(){
         String email = new String();
         String pass = new String();
-        LoginActivity.a.setVisibility(View.VISIBLE);
         Intent Dashboard_intent=new Intent(getActivity(),dashboard.class);
         email=studentid.getEditText().getText().toString()+"@iiitvadodara.ac.in";
         pass =password.getEditText().getText().toString();
@@ -62,7 +61,6 @@ public class LoginTabFragment extends Fragment {
                     }
                 }
                 else{
-                    LoginActivity.a.setVisibility(View.INVISIBLE);
                     Toast.makeText(getActivity(),"Something went wrong",Toast.LENGTH_SHORT).show();
                 }
             }

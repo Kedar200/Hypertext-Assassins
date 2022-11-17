@@ -26,7 +26,6 @@ import java.util.Map;
 public class MainActivity extends AppCompatActivity {
 
     FirebaseAuth mAuth;
-    FirebaseDatabase database;
     String TAG="Hello";
     LottieAnimationView assassin;
     TextView logoheader;
@@ -39,9 +38,7 @@ public class MainActivity extends AppCompatActivity {
         mAuth=FirebaseAuth.getInstance();
         Handler handler = new Handler();
         Intent Dashboard_intent = new Intent(this, dashboard.class);
-        Intent Sign_in_intent=new Intent(this, LoginActivity.class);
-        Intent hostel_management_Intent=new Intent(this,hostelmanagement.class);
-
+        Intent Sign_in_intent=new Intent(this, Signup.class);
 
         FirebaseUser currentUser = mAuth.getCurrentUser();
         getSupportActionBar().hide();
@@ -56,12 +53,12 @@ public class MainActivity extends AppCompatActivity {
         handler.postDelayed(new Runnable() {
             public void run() {
                 if (currentUser!= null) {
-                    Log.d("Hello", "Logged in");
+                    Log.d(TAG, "Logged in");
                     startActivity(Dashboard_intent);
                     finish();
                 } else {
-                    Log.d("Hello", "Not Logged in");
-                    startActivity(hostel_management_Intent);
+                    Log.d(TAG, "Not Logged in");
+                    startActivity(Sign_in_intent);
                     finish();
                 }
 

@@ -17,6 +17,7 @@
         <entry key="..\:/Sem 3/CS201/HypertextAssassins/app/src/main/res/drawable/ic_baseline_logout_24.xml" value="0.176" />
         <entry key="..\:/Sem 3/CS201/HypertextAssassins/app/src/main/res/drawable/ic_launcher_background.xml" value="0.22" />
         <entry key="..\:/Sem 3/CS201/HypertextAssassins/app/src/main/res/drawable/ic_person.xml" value="0.12" />
+        <entry key="..\:/Sem 3/CS201/HypertextAssassins/app/src/main/res/drawable/logo.xml" value="0.22" />
         <entry key="..\:/Sem 3/CS201/HypertextAssassins/app/src/main/res/drawable/navi_head_bg.xml" value="0.22" />
         <entry key="..\:/Sem 3/CS201/HypertextAssassins/app/src/main/res/drawable/person.xml" value="0.121" />
         <entry key="..\:/Sem 3/CS201/HypertextAssassins/app/src/main/res/drawable/vie_bg.xml" value="0.22" />
@@ -26,32 +27,17 @@
         <entry key="..\:/Sem 3/CS201/HypertextAssassins/app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="..\:/Sem 3/CS201/HypertextAssassins/app/src/main/res/layout/custom_editext.xml" value="0.25" />
         <entry key="..\:/Sem 3/CS201/HypertextAssassins/app/src/main/res/layout/dashboard.xml" value="0.24895833333333334" />
+        <entry key="..\:/Sem 3/CS201/HypertextAssassins/app/src/main/res/layout/food_list.xml" value="0.25" />
         <entry key="..\:/Sem 3/CS201/HypertextAssassins/app/src/main/res/layout/header_navigation.xml" value="0.25" />
+        <entry key="..\:/Sem 3/CS201/HypertextAssassins/app/src/main/res/layout/hostel_form.xml" value="0.264" />
+        <entry key="..\:/Sem 3/CS201/HypertextAssassins/app/src/main/res/layout/login.xml" value="0.25" />
         <entry key="..\:/Sem 3/CS201/HypertextAssassins/app/src/main/res/layout/login_tab_fragment.xml" value="0.176" />
+        <entry key="..\:/Sem 3/CS201/HypertextAssassins/app/src/main/res/layout/opening.xml" value="0.25" />
+        <entry key="..\:/Sem 3/CS201/HypertextAssassins/app/src/main/res/layout/signup.xml" value="0.25" />
         <entry key="..\:/Sem 3/CS201/HypertextAssassins/app/src/main/res/layout/signup_tab_fragment.xml" value="0.264" />
         <entry key="..\:/Sem 3/CS201/HypertextAssassins/app/src/main/res/menu/navigation_bar.xml" value="0.264" />
-        <entry key="..\:/Users/91939/StudioProjects/Hypertext-Assassins/app/src/main/res/drawable/color1.xml" value="0.1" />
-        <entry key="..\:/Users/91939/StudioProjects/Hypertext-Assassins/app/src/main/res/drawable/color2.xml" value="0.1" />
-        <entry key="..\:/Users/91939/StudioProjects/Hypertext-Assassins/app/src/main/res/drawable/complaintcurve.xml" value="0.1" />
-        <entry key="..\:/Users/91939/StudioProjects/Hypertext-Assassins/app/src/main/res/drawable/curve.xml" value="0.1" />
-        <entry key="..\:/Users/91939/StudioProjects/Hypertext-Assassins/app/src/main/res/drawable/curve2hostel.xml" value="0.1" />
-        <entry key="..\:/Users/91939/StudioProjects/Hypertext-Assassins/app/src/main/res/drawable/dashboard_toolbar_bg.xml" value="0.262" />
-        <entry key="..\:/Users/91939/StudioProjects/Hypertext-Assassins/app/src/main/res/drawable/figure.xml" value="0.262" />
-        <entry key="..\:/Users/91939/StudioProjects/Hypertext-Assassins/app/src/main/res/drawable/ic_baseline_dehaze_24.xml" value="0.262" />
-        <entry key="..\:/Users/91939/StudioProjects/Hypertext-Assassins/app/src/main/res/drawable/logo.xml" value="0.261" />
-        <entry key="..\:/Users/91939/StudioProjects/Hypertext-Assassins/app/src/main/res/drawable/robot_background.xml" value="0.261" />
-        <entry key="..\:/Users/91939/StudioProjects/Hypertext-Assassins/app/src/main/res/layout/activity_form.xml" value="0.1" />
-        <entry key="..\:/Users/91939/StudioProjects/Hypertext-Assassins/app/src/main/res/layout/activity_login.xml" value="0.25677083333333334" />
-        <entry key="..\:/Users/91939/StudioProjects/Hypertext-Assassins/app/src/main/res/layout/activity_main.xml" value="0.25677083333333334" />
-        <entry key="..\:/Users/91939/StudioProjects/Hypertext-Assassins/app/src/main/res/layout/dashboard.xml" value="0.264" />
-        <entry key="..\:/Users/91939/StudioProjects/Hypertext-Assassins/app/src/main/res/layout/food_list.xml" value="0.2" />
-        <entry key="..\:/Users/91939/StudioProjects/Hypertext-Assassins/app/src/main/res/layout/header_navigation.xml" value="0.25677083333333334" />
-        <entry key="..\:/Users/91939/StudioProjects/Hypertext-Assassins/app/src/main/res/layout/hm_mainpage.xml" value="0.2" />
-        <entry key="..\:/Users/91939/StudioProjects/Hypertext-Assassins/app/src/main/res/layout/hostel_form.xml" value="0.264" />
-        <entry key="..\:/Users/91939/StudioProjects/Hypertext-Assassins/app/src/main/res/layout/login_tab_fragment.xml" value="0.25677083333333334" />
-        <entry key="..\:/Users/91939/StudioProjects/Hypertext-Assassins/app/src/main/res/layout/opening.xml" value="0.12487335359675786" />
-        <entry key="..\:/Users/91939/StudioProjects/Hypertext-Assassins/app/src/main/res/layout/signup_tab_fragment.xml" value="0.25677083333333334" />
-        <entry key="..\:/Users/91939/StudioProjects/Hypertext-Assassins/app/src/main/res/menu/navigation_bar.xml" value="0.25677083333333334" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/Hypertext-Assassins/app/src/main/res/drawable/button_bg.xml" value="0.189" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/Hypertext-Assassins/app/src/main/res/drawable/button_curve.xml" value="0.189" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/Hypertext-Assassins/app/src/main/res/drawable/curve_background.xml" value="0.1055" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/Hypertext-Assassins/app/src/main/res/drawable/curve_header.xml" value="0.1055" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/Hypertext-Assassins/app/src/main/res/drawable/curve_white.xml" value="0.1055" />
