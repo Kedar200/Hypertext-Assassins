@@ -49,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-
+        Log.d(TAG,currentUser.getEmail());
         handler.postDelayed(new Runnable() {
             public void run() {
                 if (currentUser!= null) {

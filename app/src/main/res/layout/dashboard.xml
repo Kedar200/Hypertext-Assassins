@@ -44,7 +44,7 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/toolbar"
-            android:layout_width="411dp"
+            android:layout_width="match_parent"
             android:layout_height="222dp"
             android:background="@drawable/dashboard_toolbar_bg"
             android:elevation="10dp"
@@ -58,7 +58,9 @@
                 android:layout_height="wrap_content"
                 android:paddingLeft="10dp"
                 android:paddingTop="10dp"
-                android:src="@drawable/ic_baseline_dehaze_24">
+                android:src="@drawable/ic_baseline_dehaze_24"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
 
             </ImageView>
 
@@ -104,19 +106,20 @@
 
             <TextView
                 android:id="@+id/underline"
-                android:layout_width="429dp"
+                android:layout_width="wrap_content"
                 android:layout_height="32dp"
                 android:layout_marginBottom="112dp"
                 android:layout_weight="1"
                 android:gravity="center|left"
                 android:paddingLeft="70dp"
                 android:paddingBottom="2dp"
-                android:text="_________________________________"
+                android:text="_____________________________"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/imageView2"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/Dashboard"
-                app:layout_constraintVertical_bias="1.0"
-                tools:layout_editor_absoluteX="-34dp" />
+                app:layout_constraintVertical_bias="1.0" />
 
             <com.airbnb.lottie.LottieAnimationView
                 android:id="@+id/lottieAnimationView"
