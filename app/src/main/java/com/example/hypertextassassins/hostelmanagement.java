@@ -23,6 +23,7 @@ public class hostelmanagement extends AppCompatActivity {
         elctricianbutton=findViewById(R.id.electricianbutton);
         cleanerbutton=findViewById(R.id.cleanerbutton);
 
+
         carpenterbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

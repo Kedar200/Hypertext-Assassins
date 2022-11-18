@@ -20,39 +20,39 @@
            <KeyAttribute
                motion:motionTarget="@+id/assassin"
                motion:framePosition="55"
-               android:scaleY="1.8" />
-
-           <KeyAttribute
-               motion:motionTarget="@+id/assassin"
-               motion:framePosition="30"
-               android:scaleX="1.4" />
-           <KeyAttribute
-               motion:motionTarget="@+id/assassin"
-               motion:framePosition="30"
-               android:scaleY="1.4" />
-           <KeyAttribute
-               motion:motionTarget="@+id/assassin"
-               motion:framePosition="70"
-               android:scaleX="1.4" />
-           <KeyAttribute
-               motion:motionTarget="@+id/assassin"
-               motion:framePosition="70"
-               android:scaleY="1.4" />
-
-           <KeyAttribute
-               motion:motionTarget="@+id/assassin"
-               motion:framePosition="100"
-               android:scaleX="1.6" />
-
-
-           <KeyAttribute
-               motion:motionTarget="@+id/assassin"
-               motion:framePosition="100"
                android:scaleY="1.6" />
+
+           <KeyAttribute
+               motion:motionTarget="@+id/assassin"
+               motion:framePosition="30"
+               android:scaleX="1.2" />
+           <KeyAttribute
+               motion:motionTarget="@+id/assassin"
+               motion:framePosition="30"
+               android:scaleY="1.2" />
+           <KeyAttribute
+               motion:motionTarget="@+id/assassin"
+               motion:framePosition="70"
+               android:scaleX="1.2" />
+           <KeyAttribute
+               motion:motionTarget="@+id/assassin"
+               motion:framePosition="70"
+               android:scaleY="1.2" />
+
+           <KeyAttribute
+               motion:motionTarget="@+id/assassin"
+               motion:framePosition="100"
+               android:scaleX="1.4" />
+
+
+           <KeyAttribute
+               motion:motionTarget="@+id/assassin"
+               motion:framePosition="100"
+               android:scaleY="1.4" />
            <KeyAttribute
                motion:motionTarget="@+id/assassin"
                motion:framePosition="55"
-               android:scaleX="1.8" />
+               android:scaleX="1.6" />
 
            <KeyAttribute
                motion:motionTarget="@+id/assassin"
