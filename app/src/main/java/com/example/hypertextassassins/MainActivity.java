@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
         mAuth=FirebaseAuth.getInstance();
         Handler handler = new Handler();
         Intent Dashboard_intent = new Intent(this, dashboard.class);
-        Intent Sign_in_intent=new Intent(this, Signup.class);
+        Intent Sign_in_intent=new Intent(this, hostelmanagement.class);
 
         FirebaseUser currentUser = mAuth.getCurrentUser();
         getSupportActionBar().hide();
@@ -49,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-        Log.d(TAG,currentUser.getEmail());
+
         handler.postDelayed(new Runnable() {
             public void run() {
                 if (currentUser!= null) {

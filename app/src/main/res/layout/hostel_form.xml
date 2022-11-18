@@ -4,290 +4,118 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#1AAEBE4C"
-    tools:context=".form">
+    android:background="#8CE0C795"
+    >
 
     <ScrollView
-        android:id="@+id/scrollView2"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="0dp">
+        android:layout_height="match_parent">
 
         <LinearLayout
-            android:id="@+id/Header"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#978527"
-            android:clipToOutline="true"
             android:orientation="vertical">
 
-
-            <androidx.cardview.widget.CardView
+            <TextView
+                android:id="@+id/ComplaintForm"
                 android:layout_width="match_parent"
-                android:layout_height="62dp">
+                android:layout_height="90dp"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/complaintlogo"
+                android:elevation="30dp"
 
-                <TextView
-                    android:id="@+id/textView5"
-                    android:layout_width="match_parent"
-                    android:layout_height="60dp"
-                    android:layout_gravity="right"
-                    android:background="@drawable/curve"
-                    android:clipToOutline="true"
-                    android:fontFamily="sans-serif"
-                    android:gravity="center|right"
-                    android:shadowColor="#36454F"
-                    android:shadowDx="0"
-                    android:shadowDy="7
-"
-                    android:shadowRadius="1"
-                    android:text="Complaint Form"
-                    android:textAlignment="center"
-                    android:textColor="#E8EEEF"
-                    android:textColorHighlight="#A51919"
-                    android:textSize="25sp"
-                    tools:visibility="visible" />
+                android:fontFamily="@font/inknut_antiqua"
+                android:gravity="center|center_horizontal"
+                android:text="Complaint Form"
+                android:textColor="#070707"
+                android:textSize="32sp"
+                android:textStyle="bold" />
 
-                <!--                <ImageView-->
-                <!--                    android:id="@+id/imageView3"-->
-                <!--                    android:layout_width="wrap_content"-->
-                <!--                    android:layout_height="45dp"-->
-                <!--                    android:padding="5dp"-->
-                <!--                    app:srcCompat="@drawable/ic_baseline_dehaze_24" />-->
-
-            </androidx.cardview.widget.CardView>
-
-            <LinearLayout
-                android:id="@+id/background"
+            <TextView
+                android:id="@+id/textView3"
                 android:layout_width="match_parent"
-                android:layout_height="700dp"
-                android:background="#C3CCCC86"
-                android:orientation="vertical">
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:paddingTop="5dp"
 
-                <TextView
-                    android:id="@+id/assist"
-                    android:layout_width="match_parent"
-                    android:layout_height="39dp"
-                    android:gravity="center"
-                    android:text="@string/textview"
-                    android:textColor="#000000"
-                    android:textSize="18sp"
-                    android:textStyle="bold" />
+                android:text="@string/name"
+                android:textColor="#000000"
+                android:textSize="16sp" />
 
-                <TextView
-                    android:id="@+id/assist1"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:paddingBottom="100px"
-                    android:text="@string/name"
-                    android:textColor="#000000" />
+            <com.airbnb.lottie.LottieAnimationView
+                android:layout_width="306dp"
+                android:layout_height="149dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="10dp"
+                app:lottie_autoPlay="true"
+                app:lottie_loop="true"
+                app:lottie_rawRes="@raw/room">
 
-                <TextView
-                    android:id="@+id/dateofcomplaint"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:paddingLeft="15dp"
-                    android:paddingBottom="5dp"
-                    android:text="Date Of Complaint"
-                    android:textColor="#000000"
-                    android:textStyle="bold" />
+            </com.airbnb.lottie.LottieAnimationView>
 
-                <EditText
-                    android:id="@+id/editdateofcomplaint"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="15dp"
-                    android:background="@drawable/complaintcurve"
-                    android:ems="10"
-                    android:inputType="textPersonName"
-                    android:paddingLeft="15dp"
-                    android:paddingBottom="0dp"
-                    android:text="" />
+            <TextView
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
+                android:id="@+id/Roomtextview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:fontFamily="@font/inknut_antiqua_medium"
+                android:text="Flat No"
+                android:textColor="@color/black"
+                android:textSize="20sp" />
 
-                    <LinearLayout
-                        android:layout_width="206dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:orientation="vertical"
-                        android:textColor="#000000">
+            <EditText
+                android:id="@+id/Room"
+                android:paddingLeft="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:height="46dp"
+                android:background="@drawable/compalint_form_box"
+                android:text="" />
 
-                        <TextView
-                            android:id="@+id/firstname"
-                            android:layout_width="154dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:paddingLeft="15dp"
-                            android:paddingTop="10dp"
+            <TextView
+                android:id="@+id/Complainttextview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:fontFamily="@font/inknut_antiqua_medium"
+                android:text="Complaint"
+                android:textColor="@color/black"
+                android:textSize="20sp" />
 
-                            android:paddingBottom="5dp"
-                            android:text="Name"
-                            android:textColor="#000000"
-                            android:textStyle="bold" />
+            <EditText
+                android:id="@+id/compalint"
+                android:layout_width="match_parent"
+                android:layout_height="173dp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginBottom="30dp"
+                android:height="173dp"
+                android:background="@drawable/compalint_form_box"
+                android:ems="10"
+                android:gravity="start|end"
+                android:inputType="textPersonName"
+                android:padding="20dp"
+                android:paddingLeft="10dp"
+                android:text="" />
 
-                        <EditText
-                            android:id="@+id/editfirstname"
-                            android:layout_width="222dp"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="15dp"
-                            android:layout_weight="1"
-                            android:background="@drawable/complaintcurve"
-                            android:ems="10"
-                            android:inputType="textPersonName"
-                            android:text="" />
-                    </LinearLayout>
-
-                </LinearLayout>
-
-                <TextView
-                    android:id="@+id/email"
-
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:paddingLeft="15dp"
-                    android:paddingTop="10dp"
-                    android:paddingBottom="5dp"
-                    android:text="Email Id"
-                    android:textColor="#000000"
-                    android:textStyle="bold" />
-
-                <EditText
-                    android:id="@+id/editemail"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="15dp"
-                    android:layout_marginRight="15dp"
-                    android:background="@drawable/complaintcurve"
-                    android:ems="10"
-                    android:inputType="textPersonName"
-                    android:text="" />
-
-                <TextView
-                    android:id="@+id/Phonenumber"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:paddingLeft="15dp"
-                    android:paddingTop="10dp"
-                    android:paddingBottom="5dp"
-                    android:text="Phone Number"
-                    android:textColor="#000000"
-                    android:textStyle="bold" />
-
-                <EditText
-                    android:id="@+id/editphonenumber"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="15dp"
-                    android:layout_marginRight="150dp"
-                    android:background="@drawable/complaintcurve"
-                    android:ems="10"
-                    android:inputType="textPersonName"
-                    android:text="" />
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:orientation="vertical">
-
-                        <TextView
-                            android:id="@+id/block"
-                            android:layout_width="160dp"
-                            android:layout_height="wrap_content"
-                            android:paddingLeft="15dp"
-                            android:paddingTop="10dp"
-                            android:paddingBottom="5dp"
-                            android:text="Block "
-                            android:textColor="#000000"
-                            android:textStyle="bold" />
-
-                        <EditText
-                            android:id="@+id/editblock"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="15dp"
-                            android:layout_marginRight="15dp"
-                            android:background="@drawable/complaintcurve"
-                            android:ems="10"
-                            android:inputType="textPersonName"
-                            android:text="" />
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:orientation="vertical"
-                        android:paddingLeft="15dp">
-
-                        <TextView
-                            android:id="@+id/flatno"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:paddingTop="10dp"
-                            android:paddingBottom="5dp"
-                            android:text="Flat No"
-                            android:textColor="#000000"
-                            android:textStyle="bold" />
-
-
-                        <EditText
-                            android:id="@+id/editflatno"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginRight="15dp"
-                            android:background="@drawable/complaintcurve"
-                            android:ems="10"
-                            android:inputType="textPersonName"
-                            android:text="" />
-                    </LinearLayout>
-                </LinearLayout>
-
-                <TextView
-                    android:id="@+id/complaint"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:paddingLeft="15dp"
-                    android:paddingTop="10dp"
-                    android:paddingBottom="5dp"
-                    android:text="Complaint"
-                    android:textColor="#000000"
-                    android:textStyle="bold" />
-
-                <EditText
-                    android:id="@+id/editComplaint"
-                    android:layout_width="match_parent"
-                    android:layout_height="170dp"
-                    android:layout_marginLeft="15dp"
-                    android:layout_marginRight="15dp"
-                    android:background="@drawable/complaintcurve"
-                    android:ems="10"
-                    android:gravity="start|top"
-                    android:inputType="textMultiLine" />
-
-                <Button
-                    android:id="@+id/button3"
-                    android:layout_width="183dp"
-                    android:layout_height="61dp"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="10dp"
-                    android:gravity="center"
-                    android:paddingTop="10dp"
-                    android:text="Submit"
-                    android:textColor="#FAF7F7" />
-
-            </LinearLayout>
+            <Button
+                android:id="@+id/button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="@font/inknut_antiqua"
+                android:gravity="center|center_horizontal"
+                android:text="Submit"
+                android:textAllCaps="false"
+                android:textColor="@color/black"
+                android:textStyle="bold" />
 
         </LinearLayout>
     </ScrollView>
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
