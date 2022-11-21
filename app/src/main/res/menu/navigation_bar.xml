@@ -13,11 +13,6 @@
             android:title="Hostel Management">
         </item>
 
-<!--        <item android:id="@+id/info"-->
-<!--            android:icon="@drawable/ic_baseline_info_24"-->
-<!--            android:title="Info">-->
-<!--        </item>-->
-
         <item android:id="@+id/logout"
             android:icon="@drawable/ic_baseline_logout_24"
             android:title="Logout">
