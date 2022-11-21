@@ -27,7 +27,7 @@
                 android:id="@+id/hostel"
                 android:layout_width="match_parent"
                 android:layout_height="132dp"
-                android:background="@drawable/hostelmanage"
+                android:background="@drawable/hostelmanagement"
                 android:elevation="20dp"
                 android:gravity="center"
                 android:shadowColor="#000000"
