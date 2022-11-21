@@ -11,7 +11,14 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.airbnb.lottie.LottieAnimationView;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.time.OffsetTime;
 
@@ -37,16 +44,40 @@ public class dashboard extends AppCompatActivity {
         if(offset.getHour()>6&&offset.getHour()<12){
             greating.setText("Good Morning");
         }
-        else if(offset.getHour()>12&&offset.getHour()<18){
+        else if(offset.getHour()>=12&&offset.getHour()<=16){
             greating.setText("Good Afternoon");
         }
-        else if(offset.getHour()>18){
+        else if(offset.getHour()>=16){
             greating.setText("Good Evening");
         }
         else{
-            greating.setText("So ja sale");
+            greating.setText("Time To Sleep");
         }
 
+        String email=FirebaseAuth.getInstance().getCurrentUser().getEmail();
+        String id=email.substring(0,9);
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
+        DocumentReference docRef = db.collection("User").document(id);
+
+        TextView wc=findViewById(R.id.Welcomeback);
+        docRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+            @Override
+            public void onComplete(Task<DocumentSnapshot> task) {
+                if (task.isSuccessful()) {
+                    DocumentSnapshot document = task.getResult();
+                    if (document.exists()) {
+                        Log.d("Hello", "DocumentSnapshot data: "+id + document.getData());
+
+                        wc.setText(wc.getText()+" "+document.getData().get("name"));
+
+                    } else {
+                        Log.d("Hello", "No such document");
+                    }
+                } else {
+                    Log.d("Hello", "get failed with ", task.getException());
+                }
+            }
+        });
         findViewById(R.id.dehaze).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

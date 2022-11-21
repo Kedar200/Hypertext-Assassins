@@ -79,14 +79,14 @@ public class Signup extends AppCompatActivity {
                     Log.d(TAG, "createUserWithEmail:success");
                     FirebaseFirestore db = FirebaseFirestore.getInstance();
                     FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-                    if(!user.isEmailVerified()) {
-//                        user.sendEmailVerification().addOnCompleteListener(new OnCompleteListener<Void>() {
-//                            @Override
-//                            public void onComplete(@NonNull Task<Void> task) {
-//                                Log.d(TAG, "Hello");
-//                            }
-//                        });
-                    }
+                        user.sendEmailVerification().addOnCompleteListener(new OnCompleteListener<Void>() {
+                            @Override
+                            public void onComplete(@NonNull Task<Void> task) {
+                                Log.d(TAG, "Hello");
+                                Toast.makeText(Signup.this,"Check Your Mail ",Toast.LENGTH_SHORT).show();
+                            }
+                        });
+
                     User localuser = new User(student_id.getEditText().getText().toString(),Name.getEditText().getText().toString(),phone_number.getEditText().getText().toString());
 
                     db.collection("User").document(localuser.getStudent_id())
@@ -108,7 +108,7 @@ public class Signup extends AppCompatActivity {
                     handler.postDelayed(new Runnable() {
                         @Override
                         public void run() {
-                            startActivity(Dashboard_intent);
+                            startActivity(new Intent(Signup.this,emailverify.class));
                             finish();
                         }
                     },2000);

@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -29,7 +30,7 @@ public class Login extends AppCompatActivity {
         Student_id = findViewById(R.id.email);
         pass=findViewById(R.id.password);
 
-        findViewById(R.id.signin).setOnClickListener(new View.OnClickListener() {
+        findViewById(R.id.sign_in).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Signin();
@@ -50,7 +51,20 @@ public class Login extends AppCompatActivity {
                             FirebaseUser user = mAuth.getCurrentUser();
 
                             Intent intent = new Intent(Login.this,dashboard.class);
+                            if(!user.isEmailVerified()){
+                                user.sendEmailVerification().addOnCompleteListener(new OnCompleteListener<Void>() {
+                                    @Override
+                                    public void onComplete(@NonNull Task<Void> task) {
+                                        startActivity(new Intent(Login.this,emailverify.class));
+                                        finish();
+                                    }
+                                });
+
+                                }
+                            else{
                             startActivity(intent);
+                            finish();
+                            }
 
                         } else {
                             // If sign in fails, display a message to the user.

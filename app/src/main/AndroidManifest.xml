@@ -23,7 +23,7 @@
         android:theme="@style/Theme.HypertextAssassins"
         tools:targetApi="31">
         <activity
-            android:name=".LoginActivity"
+            android:name=".emailverify"
             android:exported="false" />
         <activity
             android:name=".dashboard"
