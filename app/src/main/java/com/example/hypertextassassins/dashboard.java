@@ -1,10 +1,12 @@
 package com.example.hypertextassassins;
+import androidx.annotation.NonNull;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
@@ -13,6 +15,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.airbnb.lottie.LottieAnimationView;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.FirebaseDatabase;
@@ -22,10 +25,12 @@ import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.time.OffsetTime;
 
-public class dashboard extends AppCompatActivity {
+public class dashboard extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener  {
 
     Intent Sign_in_intent;
-
+    DrawerLayout drawerLayout;
+    NavigationView navigationView;
+    TextView greating;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,10 +40,10 @@ public class dashboard extends AppCompatActivity {
             getSupportActionBar().hide();
         }
 
+         navigationView = findViewById(R.id.navigation);
+         drawerLayout = findViewById(R.id.drawerlayout);
 
-        final DrawerLayout drawerLayout = findViewById(R.id.drawerlayout);
-
-        TextView greating=findViewById(R.id.greetings);
+        greating=findViewById(R.id.greetings);
         OffsetTime offset = OffsetTime.now();
         Log.d("Hello",String.valueOf(offset.getHour()));
         if(offset.getHour()>6&&offset.getHour()<12){
@@ -54,9 +59,15 @@ public class dashboard extends AppCompatActivity {
             greating.setText("Time To Sleep");
         }
 
-        String email=FirebaseAuth.getInstance().getCurrentUser().getEmail();
-        String id=email.substring(0,9);
+        FirebaseUser mFirebaseUser =FirebaseAuth.getInstance().getCurrentUser();
+        String email;
+        if(mFirebaseUser != null) {
+            email = mFirebaseUser.getEmail(); //Do what you need to do with the id
+            String id=email.substring(0,9);
+        }
         FirebaseFirestore db = FirebaseFirestore.getInstance();
+
+        String id = "202151001";
         DocumentReference docRef = db.collection("User").document(id);
 
         TextView wc=findViewById(R.id.Welcomeback);
@@ -84,6 +95,7 @@ public class dashboard extends AppCompatActivity {
                 drawerLayout.openDrawer(GravityCompat.START);
             }
         });
+
         LottieAnimationView assassin;
         assassin= findViewById(R.id.lottieAnimationView);
         assassin.animate().setDuration(3000);
@@ -96,6 +108,46 @@ public class dashboard extends AppCompatActivity {
                 finish();
             }
         });
+
+        navigationView.setNavigationItemSelectedListener(this);
     }
 
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()){
+            case R.id.hostelmanagement:
+                findViewById(R.id.hostelmanagement).setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        hm();
+                    }
+                });
+                break;
+
+            case R.id.home:
+                findViewById(R.id.home).setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        drawerLayout.close();
+                    }
+                });
+                break;
+
+            case R.id.logout:
+                findViewById(R.id.logout).setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+
+                    }
+                });
+                break;
+        }
+        drawerLayout.closeDrawer(GravityCompat.START);
+        return true;
+    }
+
+    public void hm(){
+        Intent intent = new Intent(this , hostelmanagement.class);
+        startActivity(intent);
+    }
 }
