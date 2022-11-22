@@ -52,19 +52,18 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-        FirebaseUser user=FirebaseAuth.getInstance().getCurrentUser();
         handler.postDelayed(new Runnable() {
             public void run() {
                 if (currentUser!= null) {
                     Log.d(TAG, "Logged in");
-                    Log.d(TAG,String.valueOf(user.isEmailVerified())+user.getEmail());
-                    if(user.isEmailVerified()){
+                    Log.d(TAG,String.valueOf(currentUser.isEmailVerified())+currentUser.getEmail());
+                    if(currentUser.isEmailVerified()){
                         
                         startActivity(Dashboard_intent);
                         finish();
                     }
                     else{
-                        user.sendEmailVerification().addOnCompleteListener(new OnCompleteListener<Void>() {
+                        currentUser.sendEmailVerification().addOnCompleteListener(new OnCompleteListener<Void>() {
                             @Override
                             public void onComplete(@NonNull Task<Void> task) {
                                 startActivity(new Intent(MainActivity.this,emailverify.class));

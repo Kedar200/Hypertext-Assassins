@@ -3,6 +3,8 @@ package com.example.hypertextassassins;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -25,10 +27,10 @@ import com.google.firebase.firestore.FirebaseFirestore;
 public class Signup extends AppCompatActivity {
     private static String  TAG = "Hello";
 
-    TextView signup;
+    Button signup;
     FirebaseAuth auth;
     TextInputLayout Name,student_id,password,phone_number;
-
+    boolean para;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,18 +45,75 @@ public class Signup extends AppCompatActivity {
 
         auth = FirebaseAuth.getInstance();
 
+        student_id.getEditText().addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                if(student_id.getEditText().getText().length()<9){
+
+                    student_id.setError("Student Id Can't be less than 9");
+                    signup.setEnabled(false);
+                }
+                else if(student_id.getEditText().getText().length()==9){
+                    student_id.setErrorEnabled(false);
+                    password.getEditText().addTextChangedListener(new TextWatcher() {
+                        @Override
+                        public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+                        }
+
+                        @Override
+                        public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                            if(password.getEditText().getText().length()<6){
+
+                                password.setError("Password Can't be less than 6");
+                                signup.setEnabled(false);
+                            }
+                            else{
+                                password.setErrorEnabled(false);
+                                signup.setEnabled(true);
+                            }
+                        }
+
+                        @Override
+                        public void afterTextChanged(Editable editable) {
+
+                        }
+                    });
+
+                }
+                else{
+                    student_id.setError("Student Id Can't be greater than 9");
+                    signup.setEnabled(false);
+                }
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+
+            }
+        });
+
 
         findViewById(R.id.sign_in).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(Signup.this,Login.class));
-
+                finish();
             }
         });
         signup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                if(Name.getEditText().getText()!=null && password.getEditText().getText().length()>=6 && student_id.getEditText().getText().length()==9 && phone_number.getEditText().getText().length()==10)
                 sign_up();
+                else{
+                    Toast.makeText(Signup.this,"Please Fill Form Correctly",Toast.LENGTH_SHORT).show();
+                }
                 Log.d("Hello",Name.getEditText().getText().toString());
             }
 

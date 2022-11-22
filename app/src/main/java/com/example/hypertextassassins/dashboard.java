@@ -1,13 +1,20 @@
 package com.example.hypertextassassins;
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.os.Handler;
 import android.util.Log;
 import android.view.MenuItem;
+import android.view.SoundEffectConstants;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -25,24 +32,37 @@ import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.time.OffsetTime;
 
-public class dashboard extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener  {
+public class dashboard extends AppCompatActivity{
 
     Intent Sign_in_intent;
-    DrawerLayout drawerLayout;
+    DrawerLayout drawer_layout;
     NavigationView navigationView;
+    ActionBarDrawerToggle drawerToggle;
     TextView greating;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.dashboard);
+        setContentView(R.layout.drawer_layout);
         Sign_in_intent=new Intent(this, Signup.class);
-        if (getSupportActionBar() != null) {
-            getSupportActionBar().hide();
-        }
 
-         navigationView = findViewById(R.id.navigation);
-         drawerLayout = findViewById(R.id.drawerlayout);
+        drawer_layout=findViewById(R.id.drawerlayout);
 
+
+       getSupportActionBar().hide();
+
+        navigationView =(NavigationView) findViewById(R.id.navigation);
+
+        findViewById(R.id.toogle).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(!drawer_layout.isDrawerOpen(GravityCompat.START)){
+                drawer_layout.openDrawer(GravityCompat.START);
+                }
+                else{
+                    drawer_layout.openDrawer(GravityCompat.START);
+                }
+            }
+        });
         greating=findViewById(R.id.greetings);
         OffsetTime offset = OffsetTime.now();
         Log.d("Hello",String.valueOf(offset.getHour()));
@@ -60,14 +80,10 @@ public class dashboard extends AppCompatActivity implements NavigationView.OnNav
         }
 
         FirebaseUser mFirebaseUser =FirebaseAuth.getInstance().getCurrentUser();
-        String email;
-        if(mFirebaseUser != null) {
-            email = mFirebaseUser.getEmail(); //Do what you need to do with the id
-            String id=email.substring(0,9);
-        }
+        String email = mFirebaseUser.getEmail(); //Do what you need to do with the id
+        String id=email.substring(0,9);
         FirebaseFirestore db = FirebaseFirestore.getInstance();
 
-        String id = "202151001";
         DocumentReference docRef = db.collection("User").document(id);
 
         TextView wc=findViewById(R.id.Welcomeback);
@@ -79,7 +95,6 @@ public class dashboard extends AppCompatActivity implements NavigationView.OnNav
                     if (document.exists()) {
                         Log.d("Hello", "DocumentSnapshot data: "+id + document.getData());
 
-                        wc.setText(wc.getText()+" "+document.getData().get("name"));
 
                     } else {
                         Log.d("Hello", "No such document");
@@ -89,65 +104,37 @@ public class dashboard extends AppCompatActivity implements NavigationView.OnNav
                 }
             }
         });
-        findViewById(R.id.dehaze).setOnClickListener(new View.OnClickListener() {
+
+        navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+
             @Override
-            public void onClick(View view) {
-                drawerLayout.openDrawer(GravityCompat.START);
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+
+                switch (item.getItemId()){
+                    case R.id.hostelmanagement:
+                        startActivity(new Intent(dashboard.this , hostelmanagement.class));
+                        break;
+
+                    case R.id.home:
+                        Log.d("Hello","home");
+                        drawer_layout.close();
+                        break;
+
+                    case R.id.logout:
+                        Log.d("Hello","Signed out");
+                        FirebaseAuth.getInstance().signOut();
+                        startActivity(Sign_in_intent);
+                        finish();
+                        break;
+                }
+                drawer_layout.close();
+                return false;
             }
         });
 
-        LottieAnimationView assassin;
-        assassin= findViewById(R.id.lottieAnimationView);
-        assassin.animate().setDuration(3000);
-
-        findViewById(R.id.imageView2).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                FirebaseAuth.getInstance().signOut();
-                startActivity(Sign_in_intent);
-                finish();
-            }
-        });
-
-        navigationView.setNavigationItemSelectedListener(this);
     }
 
-    @Override
-    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-        switch (item.getItemId()){
-            case R.id.hostelmanagement:
-                findViewById(R.id.hostelmanagement).setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        hm();
-                    }
-                });
-                break;
 
-            case R.id.home:
-                findViewById(R.id.home).setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        drawerLayout.close();
-                    }
-                });
-                break;
 
-            case R.id.logout:
-                findViewById(R.id.logout).setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
 
-                    }
-                });
-                break;
-        }
-        drawerLayout.closeDrawer(GravityCompat.START);
-        return true;
-    }
-
-    public void hm(){
-        Intent intent = new Intent(this , hostelmanagement.class);
-        startActivity(intent);
-    }
 }

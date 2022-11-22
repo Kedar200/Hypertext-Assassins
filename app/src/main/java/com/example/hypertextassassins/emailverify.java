@@ -12,6 +12,8 @@ public class emailverify extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        FirebaseAuth.getInstance().getCurrentUser().reload();
+
         if(FirebaseAuth.getInstance().getCurrentUser().isEmailVerified()){
             startActivity(new Intent(emailverify.this,dashboard.class));
         }
