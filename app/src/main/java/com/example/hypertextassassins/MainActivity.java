@@ -1,8 +1,10 @@
 package com.example.hypertextassassins;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.nfc.Tag;
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
@@ -10,8 +12,10 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.airbnb.lottie.LottieAnimationView;
+import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
@@ -38,8 +42,7 @@ public class MainActivity extends AppCompatActivity {
         mAuth=FirebaseAuth.getInstance();
         Handler handler = new Handler();
         Intent Dashboard_intent = new Intent(this, dashboard.class);
-        Intent Sign_in_intent=new Intent(this, dashboard.class);
-
+        Intent Sign_in_intent=new Intent(this, Signup.class);
         FirebaseUser currentUser = mAuth.getCurrentUser();
         getSupportActionBar().hide();
         logoheader=findViewById(R.id.logoheader);
@@ -49,13 +52,28 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-
         handler.postDelayed(new Runnable() {
             public void run() {
                 if (currentUser!= null) {
                     Log.d(TAG, "Logged in");
-                    startActivity(Dashboard_intent);
-                    finish();
+                    Log.d(TAG,String.valueOf(currentUser.isEmailVerified())+currentUser.getEmail());
+                    if(currentUser.isEmailVerified()){
+                        
+                        startActivity(Dashboard_intent);
+                        finish();
+                    }
+                    else{
+                        currentUser.sendEmailVerification().addOnCompleteListener(new OnCompleteListener<Void>() {
+                            @Override
+                            public void onComplete(@NonNull Task<Void> task) {
+                                startActivity(new Intent(MainActivity.this,emailverify.class));
+                                finish();
+                            }
+                        });
+
+                    }
+
+
                 } else {
                     Log.d(TAG, "Not Logged in");
                     startActivity(Sign_in_intent);

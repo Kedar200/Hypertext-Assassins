@@ -27,25 +27,16 @@
                 android:id="@+id/hostel"
                 android:layout_width="match_parent"
                 android:layout_height="132dp"
-                android:background="@drawable/hostelmanagement"
+                android:background="@drawable/hostelmanage"
                 android:elevation="20dp"
                 android:gravity="center"
                 android:shadowColor="#000000"
                 android:text="Hostel Management"
-                android:textAllCaps="false"
                 android:textColor="#0C0C0C"
                 android:textDirection="firstStrongRtl"
-                android:textIsSelectable="true"
                 android:textSize="28sp"
                 android:textStyle="bold" />
 
-            <ImageView
-                android:id="@+id/imageView4"
-                android:layout_width="40dp"
-                android:layout_height="45dp"
-                android:elevation="20dp"
-                android:padding="5dp"
-                app:srcCompat="@drawable/ic_baseline_dehaze_24" />
         </androidx.cardview.widget.CardView>
 
         <HorizontalScrollView

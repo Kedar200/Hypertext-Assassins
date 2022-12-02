@@ -6,4 +6,7 @@
     <string name="name">
         please complete the form below for your complaints
     </string>
+
+    <string name="open">Open Navigation drawer</string>
+    <string name="close">close Navigation drawer</string>
 </resources>
