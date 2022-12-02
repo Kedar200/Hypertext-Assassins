@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
         mAuth=FirebaseAuth.getInstance();
         Handler handler = new Handler();
         Intent Dashboard_intent = new Intent(this, dashboard.class);
-        Intent Sign_in_intent=new Intent(this, hostelmanagement.class);
+        Intent Sign_in_intent=new Intent(this, dashboard.class);
 
         FirebaseUser currentUser = mAuth.getCurrentUser();
         getSupportActionBar().hide();
