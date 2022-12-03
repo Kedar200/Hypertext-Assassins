@@ -299,12 +299,16 @@
                             android:textAlignment="gravity"
                             android:textSize="21sp"
                             android:textStyle="normal" />
+
+
                     </androidx.cardview.widget.CardView>
 
                 </LinearLayout>
 
+
             </LinearLayout>
         </HorizontalScrollView>
+
 
     </LinearLayout>
 
