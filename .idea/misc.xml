@@ -23,6 +23,8 @@
         <entry key="..\:/Sem 3/CS201/HypertextAssassins/app/src/main/res/drawable/ic_person.xml" value="0.12" />
         <entry key="..\:/Sem 3/CS201/HypertextAssassins/app/src/main/res/drawable/image.xml" value="0.121" />
         <entry key="..\:/Sem 3/CS201/HypertextAssassins/app/src/main/res/drawable/navi_head_bg.xml" value="0.22" />
+        <entry key="..\:/Sem 3/CS201/HypertextAssassins/app/src/main/res/drawable/noticeheading.xml" value="0.24" />
+        <entry key="..\:/Sem 3/CS201/HypertextAssassins/app/src/main/res/drawable/ntice_backghround.xml" value="0.24" />
         <entry key="..\:/Sem 3/CS201/HypertextAssassins/app/src/main/res/drawable/person.xml" value="0.121" />
         <entry key="..\:/Sem 3/CS201/HypertextAssassins/app/src/main/res/drawable/vie_bg.xml" value="0.22" />
         <entry key="..\:/Sem 3/CS201/HypertextAssassins/app/src/main/res/font/anton.xml" value="0.28020833333333334" />
@@ -32,7 +34,7 @@
         <entry key="..\:/Sem 3/CS201/HypertextAssassins/app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="..\:/Sem 3/CS201/HypertextAssassins/app/src/main/res/layout/custom_editext.xml" value="0.25" />
         <entry key="..\:/Sem 3/CS201/HypertextAssassins/app/src/main/res/layout/dashboard.xml" value="0.24895833333333334" />
-        <entry key="..\:/Sem 3/CS201/HypertextAssassins/app/src/main/res/layout/drawer_layout.xml" value="0.10885416666666667" />
+        <entry key="..\:/Sem 3/CS201/HypertextAssassins/app/src/main/res/layout/drawer_layout.xml" value="0.264" />
         <entry key="..\:/Sem 3/CS201/HypertextAssassins/app/src/main/res/layout/food_list.xml" value="0.25" />
         <entry key="..\:/Sem 3/CS201/HypertextAssassins/app/src/main/res/layout/header_navigation.xml" value="0.25" />
         <entry key="..\:/Sem 3/CS201/HypertextAssassins/app/src/main/res/layout/hm_mainpage.xml" value="0.25" />

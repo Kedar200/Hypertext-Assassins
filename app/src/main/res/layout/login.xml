@@ -23,11 +23,11 @@
     </ImageView>
 
     <LinearLayout
+        android:layout_marginTop="30dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/imageView3">
+        app:layout_constraintTop_toBottomOf="@+id/imageView3">
 
 
         <com.google.android.material.textfield.TextInputLayout
@@ -45,9 +45,9 @@
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/email_edt"
-                android:inputType="number"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:inputType="number" />
         </com.google.android.material.textfield.TextInputLayout>
 
 

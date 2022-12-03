@@ -27,36 +27,37 @@ public class hostelmanagement extends AppCompatActivity {
         carpenterbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                openform();
+                openform("Carpenter");
             }
 
         });
         plumberbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                openform();
+                openform("Plumber");
             }
 
         });
         cleanerbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                openform();
+                openform("Cleaner");
             }
 
         });
         elctricianbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                openform();
+                openform("Electrician");
             }
 
         });
     }
 
-    public void openform()
+    public void openform(String a)
     {
         Intent intent=new Intent(this,complainform.class);
+        intent.putExtra("type",a);
         startActivity(intent);
     }
 
