@@ -22,9 +22,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.HypertextAssassins"
         tools:targetApi="31">
-        <activity
-            android:name=".emailverify"
-            android:exported="false" />
+
         <activity
             android:name=".MainActivity"
             android:exported="true">

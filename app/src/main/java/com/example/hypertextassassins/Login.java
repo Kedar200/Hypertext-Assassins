@@ -33,7 +33,6 @@ public class Login extends AppCompatActivity {
         Signin = findViewById(R.id.signin);
         student_id = findViewById(R.id.email);
         password = findViewById(R.id.password);
-        Signin.setEnabled(false);
         student_id.getEditText().addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
@@ -100,22 +99,10 @@ public class Login extends AppCompatActivity {
                             Log.d(TAG, "createUserWithEmail:success");
                             FirebaseUser user = mAuth.getCurrentUser();
 
-                            Intent intent = new Intent(Login.this,dashboard.class);
-                            if(!user.isEmailVerified()){
-                                user.sendEmailVerification().addOnCompleteListener(new OnCompleteListener<Void>() {
-                                    @Override
-                                    public void onComplete(@NonNull Task<Void> task) {
-                                        startActivity(new Intent(Login.this,emailverify.class));
-                                        finish();
-                                    }
-                                });
-
-                                }
-                            else{
+                            Intent intent = new Intent(Login.this, dashboard.class);
                             startActivity(intent);
-                            finish();
-
-                            }
+                            Toast.makeText(Login.this, "Logged in.",
+                                    Toast.LENGTH_SHORT).show();
 
                         } else {
                             // If sign in fails, display a message to the user.

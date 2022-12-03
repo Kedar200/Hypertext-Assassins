@@ -56,25 +56,12 @@ public class MainActivity extends AppCompatActivity {
             public void run() {
                 if (currentUser!= null) {
                     Log.d(TAG, "Logged in");
-                    Log.d(TAG,String.valueOf(currentUser.isEmailVerified())+currentUser.getEmail());
-                    if(currentUser.isEmailVerified()){
-                        
                         startActivity(Dashboard_intent);
                         finish();
                     }
-                    else{
-                        currentUser.sendEmailVerification().addOnCompleteListener(new OnCompleteListener<Void>() {
-                            @Override
-                            public void onComplete(@NonNull Task<Void> task) {
-                                startActivity(new Intent(MainActivity.this,emailverify.class));
-                                finish();
-                            }
-                        });
-
-                    }
 
 
-                } else {
+                else {
                     Log.d(TAG, "Not Logged in");
                     startActivity(Sign_in_intent);
                     finish();

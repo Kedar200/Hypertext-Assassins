@@ -30,7 +30,7 @@ public class Signup extends AppCompatActivity {
     Button signup;
     FirebaseAuth auth;
     TextInputLayout Name,student_id,password,phone_number;
-    boolean para;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -138,14 +138,6 @@ public class Signup extends AppCompatActivity {
                     Log.d(TAG, "createUserWithEmail:success");
                     FirebaseFirestore db = FirebaseFirestore.getInstance();
                     FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-                        user.sendEmailVerification().addOnCompleteListener(new OnCompleteListener<Void>() {
-                            @Override
-                            public void onComplete(@NonNull Task<Void> task) {
-                                Log.d(TAG, "Hello");
-                                Toast.makeText(Signup.this,"Check Your Mail ",Toast.LENGTH_SHORT).show();
-                            }
-                        });
-
                     User localuser = new User(student_id.getEditText().getText().toString(),Name.getEditText().getText().toString(),phone_number.getEditText().getText().toString());
 
                     db.collection("User").document(localuser.getStudent_id())
@@ -163,11 +155,12 @@ public class Signup extends AppCompatActivity {
                                     Log.w(TAG, "Error writing document", e);
                                 }
                             });
+
                     Handler handler=new Handler();
                     handler.postDelayed(new Runnable() {
                         @Override
                         public void run() {
-                            startActivity(new Intent(Signup.this,emailverify.class));
+                            startActivity(new Intent(Signup.this,dashboard.class));
                             finish();
                         }
                     },2000);

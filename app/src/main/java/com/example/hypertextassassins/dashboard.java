@@ -32,13 +32,15 @@ import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.time.OffsetTime;
 
+import io.grpc.okhttp.internal.framed.Header;
+
 public class dashboard extends AppCompatActivity{
 
     Intent Sign_in_intent;
     DrawerLayout drawer_layout;
     NavigationView navigationView;
-    ActionBarDrawerToggle drawerToggle;
-    TextView greating;
+
+    TextView greating,user,student_id;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,12 +48,17 @@ public class dashboard extends AppCompatActivity{
         Sign_in_intent=new Intent(this, Signup.class);
 
         drawer_layout=findViewById(R.id.drawerlayout);
+        user=findViewById(R.id.username);
+        student_id=findViewById(R.id.student_id);
 
 
        getSupportActionBar().hide();
 
         navigationView =(NavigationView) findViewById(R.id.navigation);
+        View headerView=navigationView.getHeaderView(0);
 
+        user=(TextView)headerView.findViewById(R.id.username);
+        student_id=(TextView)headerView.findViewById(R.id.student_id);
         findViewById(R.id.toogle).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -93,9 +100,9 @@ public class dashboard extends AppCompatActivity{
                 if (task.isSuccessful()) {
                     DocumentSnapshot document = task.getResult();
                     if (document.exists()) {
-                        Log.d("Hello", "DocumentSnapshot data: "+id + document.getData());
-
-
+                        Log.d("Hello", "DocumentSnapshot data: "+id + document.getData().get("name").toString());
+                        user.setText(document.getData().get("name").toString());
+                        student_id.setText(document.getData().get("student_id").toString());
                     } else {
                         Log.d("Hello", "No such document");
                     }
