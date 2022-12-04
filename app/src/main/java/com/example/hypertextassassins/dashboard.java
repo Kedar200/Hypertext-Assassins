@@ -123,13 +123,11 @@ public class dashboard extends AppCompatActivity{
                         break;
 
                     case R.id.home:
-                        Log.d("Hello","home");
                         drawer_layout.close();
                         break;
 
 
                     case R.id.your_complaint:
-                        Log.d("Hello","home");
                         startActivity(new Intent(dashboard.this,complaints.class));
                         break;
 

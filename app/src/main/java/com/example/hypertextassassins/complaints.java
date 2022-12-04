@@ -1,5 +1,6 @@
 package com.example.hypertextassassins;
 
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
@@ -10,6 +11,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.motion.widget.OnSwipe;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -46,6 +48,7 @@ public class complaints extends AppCompatActivity implements CustomAdapter.ItemC
         ArrayList<String> Date = new ArrayList<>();
         ArrayList<String> Type = new ArrayList<>();
         ArrayList<String> Description = new ArrayList<>();
+        ArrayList<String> bg=new ArrayList<>();
 
         progressBar=findViewById(R.id.progressBar2);
         FirebaseUser mFirebaseUser = FirebaseAuth.getInstance().getCurrentUser();
@@ -59,11 +62,18 @@ public class complaints extends AppCompatActivity implements CustomAdapter.ItemC
                     public void onComplete(@NonNull Task<QuerySnapshot> task) {
                         if (task.isSuccessful()) {
                             for (QueryDocumentSnapshot document : task.getResult()) {
-//                                Log.d("Hello", document.getId() + " => " + document.getData());
                                 Type.add(document.getData().get("type").toString());
                                 Date.add(document.getData().get("date_of_complaint").toString());
                                 Description.add(document.getData().get("description").toString());
-                                Log.d("Hello",Type.toString());
+
+                                String s="Pending";
+                                if(document.getData().get("state").toString().compareTo(s)==0){
+
+                                bg.add(String.valueOf(R.drawable.red_bg));
+                                }
+                                else{
+                                    bg.add(String.valueOf(R.drawable.green_bg));
+                                }
                             }
                         } else {
                             Log.w("Hello", "Error getting documents.", task.getException());
@@ -79,9 +89,7 @@ public class complaints extends AppCompatActivity implements CustomAdapter.ItemC
                 RecyclerView recyclerView = findViewById(R.id.rvAnimals);
                 recyclerView.setLayoutManager(new LinearLayoutManager(complaints.this));
 
-
-
-                adapter = new CustomAdapter(complaints.this, Type,Date,Description);
+                adapter = new CustomAdapter(complaints.this, Type,Date,Description,bg);
                 adapter.setClickListener(complaints.this);
                 progressBar.setVisibility(View.INVISIBLE);
                 recyclerView.setAdapter(adapter);
