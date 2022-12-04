@@ -11,6 +11,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -90,6 +91,13 @@ public class Login extends AppCompatActivity {
     public void login(){
         String email=student_id.getEditText().getText().toString()+"@iiitvadodara.ac.in";
         FirebaseAuth mAuth=FirebaseAuth.getInstance();
+
+        final AlertDialog.Builder alert = new AlertDialog.Builder(Login.this);
+        View mview = getLayoutInflater().inflate(R.layout.dialog_load,null);
+        alert.setView(mview);
+        final AlertDialog alertDialog = alert.create();
+        alertDialog.setCanceledOnTouchOutside(false);
+        alertDialog.show();
         mAuth.signInWithEmailAndPassword(email, password.getEditText().getText().toString())
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
@@ -98,9 +106,11 @@ public class Login extends AppCompatActivity {
                             // Sign in success, update UI with the signed-in user's information
                             Log.d(TAG, "createUserWithEmail:success");
                             FirebaseUser user = mAuth.getCurrentUser();
+                            alertDialog.hide();
 
                             Intent intent = new Intent(Login.this, dashboard.class);
                             startActivity(intent);
+                            finish();
                             Toast.makeText(Login.this, "Logged in.",
                                     Toast.LENGTH_SHORT).show();
 
@@ -109,6 +119,7 @@ public class Login extends AppCompatActivity {
                             Log.w(TAG, "createUserWithEmail:failure", task.getException());
                             Toast.makeText(Login.this, "Authentication failed.",
                                     Toast.LENGTH_SHORT).show();
+                            alertDialog.hide();
 
                         }
                     }

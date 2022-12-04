@@ -1,11 +1,14 @@
 package com.example.hypertextassassins;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnFailureListener;
@@ -23,7 +26,7 @@ public class complainform extends AppCompatActivity {
     String a;
     private SimpleDateFormat dateFormat;
     private String date;
-
+    TextView done;
 
 
     @Override
@@ -35,7 +38,7 @@ public class complainform extends AppCompatActivity {
         Log.d("Hello",a);
         room=findViewById(R.id.Room);
         complaint_dec=findViewById(R.id.compalint);
-
+        done = findViewById(R.id.done);
 
         findViewById(R.id.button).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -45,6 +48,23 @@ public class complainform extends AppCompatActivity {
         });
     }
     public void submit(){
+
+        final AlertDialog.Builder alert = new AlertDialog.Builder(complainform.this);
+        View mview = getLayoutInflater().inflate(R.layout.dialog_finish,null);
+        TextView done = mview.findViewById(R.id.done);
+        alert.setView(mview);
+
+        final AlertDialog alertDialog = alert.create();
+        alertDialog.setCanceledOnTouchOutside(false);
+        Toast.makeText(complainform.this, "Successfully Registered", Toast.LENGTH_SHORT).show();
+        done.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                alertDialog.dismiss();
+                back();
+            }
+        });
+        alertDialog.show();
         String room_no=room.getText().toString();
         String complaint_dec_str=complaint_dec.getText().toString();
 
@@ -70,5 +90,10 @@ public class complainform extends AppCompatActivity {
                         Log.w("Hello", "Error writing document", e);
                     }
                 });
+    }
+
+    public void back(){
+        Intent intent = new Intent(this,hostelmanagement.class);
+        startActivity(intent);
     }
 }

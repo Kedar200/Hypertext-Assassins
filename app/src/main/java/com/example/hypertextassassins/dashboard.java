@@ -127,6 +127,12 @@ public class dashboard extends AppCompatActivity{
                         drawer_layout.close();
                         break;
 
+
+                    case R.id.your_complaint:
+                        Log.d("Hello","home");
+                        startActivity(new Intent(dashboard.this,complaints.class));
+                        break;
+
                     case R.id.logout:
                         Log.d("Hello","Signed out");
                         FirebaseAuth.getInstance().signOut();
