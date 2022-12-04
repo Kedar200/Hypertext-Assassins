@@ -4,12 +4,12 @@
 
 
     <corners
-        android:bottomRightRadius="100dp"
-        android:bottomLeftRadius="100dp">
+        android:topRightRadius="100dp"
+        android:topLeftRadius="100dp">
     </corners>
 
     <solid
-        android:color="#66EFFF3A"></solid>
+        android:color="#EDB900"></solid>
     <item android:name="android:shadowColor">#000000</item>
     <item android:name="android:shadowRadius">5</item>
     <item android:name="android:shadowDy">3</item>
