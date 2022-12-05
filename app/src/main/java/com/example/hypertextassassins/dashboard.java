@@ -21,16 +21,22 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.airbnb.lottie.LottieAnimationView;
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.time.OffsetTime;
+import java.util.HashMap;
 
 import io.grpc.okhttp.internal.framed.Header;
 
@@ -39,8 +45,9 @@ public class dashboard extends AppCompatActivity{
     Intent Sign_in_intent;
     DrawerLayout drawer_layout;
     NavigationView navigationView;
-
-    TextView greating,user,student_id;
+    FirebaseDatabase database;
+    DatabaseReference ref;
+    TextView greating,user,student_id,notice_board;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -50,7 +57,7 @@ public class dashboard extends AppCompatActivity{
         drawer_layout=findViewById(R.id.drawerlayout);
         user=findViewById(R.id.username);
         student_id=findViewById(R.id.student_id);
-
+        notice_board=findViewById(R.id.textView2);
 
        getSupportActionBar().hide();
 
@@ -92,6 +99,27 @@ public class dashboard extends AppCompatActivity{
         FirebaseFirestore db = FirebaseFirestore.getInstance();
 
         DocumentReference docRef = db.collection("User").document(id);
+
+
+        DocumentReference notice=db.collection("Notice").document("one");
+
+
+        notice.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+            @Override
+            public void onComplete(Task<DocumentSnapshot> task) {
+                if (task.isSuccessful()) {
+                    DocumentSnapshot document = task.getResult();
+                    if (document.exists()) {
+                        notice_board.setText(document.getData().get("stringExample").toString());
+
+                    } else {
+                        Log.d("Hello", "No such document");
+                    }
+                } else {
+                    Log.d("Hello", "get failed with ", task.getException());
+                }
+            }
+        });
 
         TextView wc=findViewById(R.id.Welcomeback);
         docRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {

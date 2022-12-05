@@ -56,7 +56,7 @@ public class complainform extends AppCompatActivity {
 
         final AlertDialog alertDialog = alert.create();
         alertDialog.setCanceledOnTouchOutside(false);
-        Toast.makeText(complainform.this, "Successfully Registered", Toast.LENGTH_SHORT).show();
+
         done.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -64,7 +64,6 @@ public class complainform extends AppCompatActivity {
                 back();
             }
         });
-        alertDialog.show();
         String room_no=room.getText().toString();
         String complaint_dec_str=complaint_dec.getText().toString();
 
@@ -80,6 +79,7 @@ public class complainform extends AppCompatActivity {
                     @Override
                     public void onSuccess(Void aVoid) {
 
+                        alertDialog.show();
                         Log.d("Hello", "DocumentSnapshot successfully written!");
                     }
                 })
@@ -93,7 +93,8 @@ public class complainform extends AppCompatActivity {
     }
 
     public void back(){
-        Intent intent = new Intent(this,hostelmanagement.class);
+        Intent intent = new Intent(this,complaints.class);
         startActivity(intent);
+        finish();
     }
 }

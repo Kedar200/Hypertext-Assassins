@@ -20,12 +20,12 @@
 
 
         <androidx.cardview.widget.CardView
-            android:layout_width="429dp"
-            android:layout_height="260dp">
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
-            <LinearLayout
+            <androidx.constraintlayout.widget.ConstraintLayout
 
-                android:layout_width="275dp"
+                android:layout_width="wrap_content"
                 android:layout_height="match_parent"
 
                 android:orientation="horizontal">
@@ -36,15 +36,17 @@
                     android:background="@drawable/hostelmanage"
                     android:orientation="vertical"
                     android:paddingLeft="10dp"
-                    android:paddingTop="30dp">
+                    android:paddingTop="30dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
 
                     <TextView
                         android:id="@+id/management"
                         android:layout_width="215dp"
                         android:layout_height="wrap_content"
 
-                        android:elevation="10dp"
                         android:layout_marginTop="20dp"
+                        android:elevation="10dp"
                         android:fontFamily="@font/inknut_antiqua_medium"
                         android:text="Hostel"
                         android:textAlignment="center"
@@ -55,25 +57,26 @@
 
                     <TextView
                         android:id="@+id/textView4"
-                        android:layout_width="210dp"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="5dp"
+
                         android:fontFamily="@font/inknut_antiqua_medium"
-                        android:text="Management"
+                        android:text="Maintenance"
                         android:textColor="#0C0C0C"
                         android:textSize="29sp"
                         android:textStyle="bold" />
 
                 </LinearLayout>
 
-            </LinearLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
             <com.airbnb.lottie.LottieAnimationView
-                android:layout_width="226dp"
-                android:layout_height="242dp"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
                 android:layout_gravity="right"
                 android:elevation="10dp"
                 app:lottie_autoPlay="true"
+
                 app:lottie_loop="true"
                 app:lottie_rawRes="@raw/selection"></com.airbnb.lottie.LottieAnimationView>
 

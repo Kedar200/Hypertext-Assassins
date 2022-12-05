@@ -10,7 +10,7 @@
 
         <item android:id="@+id/hostelmanagement"
             android:icon="@drawable/ic_baseline_handyman_24"
-            android:title="Hostel Management">
+            android:title="Complaint Form">
         </item>
 
         <item android:id="@+id/your_complaint"
