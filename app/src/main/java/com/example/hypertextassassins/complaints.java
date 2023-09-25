@@ -39,18 +39,18 @@ public class complaints extends AppCompatActivity implements CustomAdapter.ItemC
 
     CustomAdapter adapter;
     ProgressBar progressBar;
+    ArrayList<String> Date = new ArrayList<>();
+    ArrayList<String> Type = new ArrayList<>();
+    ArrayList<String> Description = new ArrayList<>();
+    ArrayList<String> bg=new ArrayList<>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_complaints);
 
         // data to populate the RecyclerView with
-        ArrayList<String> Date = new ArrayList<>();
-        ArrayList<String> Type = new ArrayList<>();
-        ArrayList<String> Description = new ArrayList<>();
-        ArrayList<String> bg=new ArrayList<>();
 
-        progressBar=findViewById(R.id.progressBar2);
+        progressBar=findViewById(R.id.progressBar);
         FirebaseUser mFirebaseUser = FirebaseAuth.getInstance().getCurrentUser();
         FirebaseFirestore db = FirebaseFirestore.getInstance();
         String email = mFirebaseUser.getEmail(); //Do what you need to do with the id
@@ -75,31 +75,30 @@ public class complaints extends AppCompatActivity implements CustomAdapter.ItemC
                                     bg.add(String.valueOf(R.drawable.green_bg));
                                 }
                             }
+
+
+                            RecyclerView recyclerView = findViewById(R.id.rvAnimals);
+                            recyclerView.setLayoutManager(new LinearLayoutManager(complaints.this));
+
+                            adapter = new CustomAdapter(complaints.this, Type,Date,Description,bg);
+                            adapter.setClickListener(complaints.this);
+                            progressBar.setVisibility(View.INVISIBLE);
+                            recyclerView.setAdapter(adapter);
                         } else {
                             Log.w("Hello", "Error getting documents.", task.getException());
                         }
                     }
                 });
 
-        // set up the
-        Handler handler=new Handler();
-        handler.postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                RecyclerView recyclerView = findViewById(R.id.rvAnimals);
-                recyclerView.setLayoutManager(new LinearLayoutManager(complaints.this));
 
-                adapter = new CustomAdapter(complaints.this, Type,Date,Description,bg);
-                adapter.setClickListener(complaints.this);
-                progressBar.setVisibility(View.INVISIBLE);
-                recyclerView.setAdapter(adapter);
-            }
-        },1000);
+
+
 
     }
 
     @Override
     public void onItemClick(View view, int position) {
-//        Toast.makeText(this, "You clicked " + adapter.getItem(position) + " on row number " + position, Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "You clicked " + adapter.getItem(Type,position) + " on row number " + position, Toast.LENGTH_SHORT).show();
+
     }
 }

@@ -9,9 +9,22 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            >
+                <ImageView
+                    android:id="@+id/compalint_state_icon"
+                    android:layout_margin="10dp"
+                    android:layout_gravity="center"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp">
 
-            android:orientation="horizontal">
+                </ImageView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_margin="10dp"
@@ -21,6 +34,7 @@
             android:id="@+id/Type"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:text="Type of Complaint"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             android:textSize="20sp"
@@ -30,19 +44,48 @@
                     android:id="@+id/Date"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-
+                    android:text="dd/mm/yyyy"
                     android:textSize="16sp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
         </androidx.constraintlayout.widget.ConstraintLayout>
+                <TextView
+                    android:layout_marginLeft="10dp"
+                    android:id="@+id/desc"
+                    android:text="Description"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="16sp" />
 
         </LinearLayout>
-        <TextView
-            android:layout_marginLeft="10dp"
-            android:id="@+id/desc"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="16sp" />
 
+        </LinearLayout>
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:gravity="right"
+    >
+
+        <Button
+            android:id="@+id/done"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="@drawable/green_bg"
+            android:gravity="left"
+            android:text="Verified"></Button>
+
+        <Button
+            android:id="@+id/notdone"
+            android:layout_width="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_height="1dp"
+            android:background="@drawable/red_bg"
+            android:gravity="right"
+            android:text="Not done"
+
+            ></Button>
+</LinearLayout>
 
 </LinearLayout>

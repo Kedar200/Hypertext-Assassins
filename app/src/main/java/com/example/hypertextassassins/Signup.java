@@ -12,6 +12,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -103,7 +104,9 @@ public class Signup extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(Signup.this,Login.class));
+
                 finish();
+
             }
         });
         signup.setOnClickListener(new View.OnClickListener() {
@@ -111,6 +114,7 @@ public class Signup extends AppCompatActivity {
             public void onClick(View view) {
                 if(Name.getEditText().getText()!=null && password.getEditText().getText().length()>=6 && student_id.getEditText().getText().length()==9 && phone_number.getEditText().getText().length()==10)
                 sign_up();
+
                 else{
                     Toast.makeText(Signup.this,"Please Fill Form Correctly",Toast.LENGTH_SHORT).show();
                 }
@@ -129,7 +133,13 @@ public class Signup extends AppCompatActivity {
         email =student_id.getEditText().getText().toString()+"@iiitvadodara.ac.in";
         Log.d("Hello",email);
         pass =password.getEditText().getText().toString();
+        final AlertDialog.Builder alert = new AlertDialog.Builder(Signup.this);
+        View mview = getLayoutInflater().inflate(R.layout.dialog_load,null);
+        alert.setView(mview);
 
+        final AlertDialog alertDialog = alert.create();
+        alertDialog.setCanceledOnTouchOutside(false);
+        alertDialog.show();
         auth.createUserWithEmailAndPassword(email, pass).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(Task<AuthResult> task) {
@@ -139,7 +149,6 @@ public class Signup extends AppCompatActivity {
                     FirebaseFirestore db = FirebaseFirestore.getInstance();
                     FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
                     User localuser = new User(student_id.getEditText().getText().toString(),Name.getEditText().getText().toString(),phone_number.getEditText().getText().toString());
-
                     db.collection("User").document(localuser.getStudent_id())
                             .set(localuser)
                             .addOnSuccessListener(new OnSuccessListener<Void>() {
@@ -155,12 +164,11 @@ public class Signup extends AppCompatActivity {
                                     Log.w(TAG, "Error writing document", e);
                                 }
                             });
-
                     Handler handler=new Handler();
                     handler.postDelayed(new Runnable() {
                         @Override
                         public void run() {
-                            startActivity(new Intent(Signup.this,dashboard.class));
+                            startActivity(new Intent(Signup.this,emailverification.class));
                             finish();
                         }
                     },2000);
@@ -168,6 +176,7 @@ public class Signup extends AppCompatActivity {
                     // If sign in fails, display a message to the user.
                     Log.w(TAG, "createUserWithEmail:failure", task.getException());
                     Toast.makeText(Signup.this, "Authentication failed.",Toast.LENGTH_SHORT).show();
+                    alertDialog.hide();
                 }
             }
         });

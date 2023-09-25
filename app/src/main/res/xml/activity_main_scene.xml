@@ -59,6 +59,10 @@
                motion:framePosition="0"
                android:translationY="30dp" />
        </KeyFrameSet>
+        <OnSwipe motion:springDamping="36.719"
+            motion:springMass="7.3"
+            motion:springStiffness="1020.0"
+            motion:springStopThreshold="0.0774" />
     </Transition>
 
     <ConstraintSet android:id="@+id/start">

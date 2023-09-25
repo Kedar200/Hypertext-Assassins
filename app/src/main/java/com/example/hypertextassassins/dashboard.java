@@ -3,6 +3,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.ActionBarDrawerToggle;
+import androidx.appcompat.app.AppCompatDelegate;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
@@ -34,6 +35,7 @@ import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.messaging.FirebaseMessaging;
 
 import java.time.OffsetTime;
 import java.util.HashMap;
@@ -53,11 +55,11 @@ public class dashboard extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.drawer_layout);
         Sign_in_intent=new Intent(this, Signup.class);
-
+        Log.d("Hello", String.valueOf(FirebaseAuth.getInstance().getCurrentUser().isEmailVerified()));
         drawer_layout=findViewById(R.id.drawerlayout);
         user=findViewById(R.id.username);
         student_id=findViewById(R.id.student_id);
-        notice_board=findViewById(R.id.textView2);
+        notice_board=findViewById(R.id.notice);
 
        getSupportActionBar().hide();
 
@@ -121,7 +123,7 @@ public class dashboard extends AppCompatActivity{
             }
         });
 
-        TextView wc=findViewById(R.id.Welcomeback);
+
         docRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
             @Override
             public void onComplete(Task<DocumentSnapshot> task) {
@@ -172,8 +174,4 @@ public class dashboard extends AppCompatActivity{
         });
 
     }
-
-
-
-
 }

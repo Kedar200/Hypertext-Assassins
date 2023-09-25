@@ -32,10 +32,11 @@
         <entry key="..\:/Sem 3/CS201/HypertextAssassins/app/src/main/res/drawable/vie_bg.xml" value="0.22" />
         <entry key="..\:/Sem 3/CS201/HypertextAssassins/app/src/main/res/font/anton.xml" value="0.28020833333333334" />
         <entry key="..\:/Sem 3/CS201/HypertextAssassins/app/src/main/res/layout/activity_complaints.xml" value="0.25" />
+        <entry key="..\:/Sem 3/CS201/HypertextAssassins/app/src/main/res/layout/activity_emailverification.xml" value="0.25" />
         <entry key="..\:/Sem 3/CS201/HypertextAssassins/app/src/main/res/layout/activity_emailverify.xml" value="0.25" />
         <entry key="..\:/Sem 3/CS201/HypertextAssassins/app/src/main/res/layout/activity_introductory.xml" value="0.264" />
         <entry key="..\:/Sem 3/CS201/HypertextAssassins/app/src/main/res/layout/activity_login.xml" value="0.176" />
-        <entry key="..\:/Sem 3/CS201/HypertextAssassins/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/Sem 3/CS201/HypertextAssassins/app/src/main/res/layout/activity_main.xml" value="0.176" />
         <entry key="..\:/Sem 3/CS201/HypertextAssassins/app/src/main/res/layout/custom_editext.xml" value="0.25" />
         <entry key="..\:/Sem 3/CS201/HypertextAssassins/app/src/main/res/layout/dashboard.xml" value="0.24895833333333334" />
         <entry key="..\:/Sem 3/CS201/HypertextAssassins/app/src/main/res/layout/dialog_finish.xml" value="0.25" />
@@ -45,6 +46,7 @@
         <entry key="..\:/Sem 3/CS201/HypertextAssassins/app/src/main/res/layout/header_navigation.xml" value="0.25" />
         <entry key="..\:/Sem 3/CS201/HypertextAssassins/app/src/main/res/layout/hm_mainpage.xml" value="0.25" />
         <entry key="..\:/Sem 3/CS201/HypertextAssassins/app/src/main/res/layout/hostel_form.xml" value="0.25" />
+        <entry key="..\:/Sem 3/CS201/HypertextAssassins/app/src/main/res/layout/imageslider.xml" value="0.25" />
         <entry key="..\:/Sem 3/CS201/HypertextAssassins/app/src/main/res/layout/list_item_view.xml" value="0.26413345690454126" />
         <entry key="..\:/Sem 3/CS201/HypertextAssassins/app/src/main/res/layout/login.xml" value="0.25" />
         <entry key="..\:/Sem 3/CS201/HypertextAssassins/app/src/main/res/layout/login_tab_fragment.xml" value="0.176" />

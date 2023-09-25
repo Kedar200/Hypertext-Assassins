@@ -8,6 +8,8 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -55,11 +57,12 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
         holder.date.setText(var2);
         holder.dec.setText(var3);
 
-        if(background.get(position).compareTo(String.valueOf(R.drawable.red_bg))==0){
-            holder.type.setTextColor(Color.parseColor("#FF0000"));
+        if(background.get(position).compareTo(String.valueOf(R.drawable.red_bg))!=0){
+            holder.type.setTextColor(Color.parseColor("#5CC615"));
+            holder.icon.setImageResource(R.drawable.complete);
         }
         else{
-            holder.type.setTextColor(Color.parseColor("#5CC615"));
+            holder.icon.setImageResource(R.drawable.ic_baseline_access_time_24);
         }
     }
 
@@ -77,18 +80,28 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
         TextView date;
         TextView dec;
         LinearLayout box;
+        ImageView icon;
+        Button done;
+        Button notdone;
         ViewHolder(View itemView) {
             super(itemView);
             type=itemView.findViewById(R.id.Type);
             date=itemView.findViewById(R.id.Date);
             dec=itemView.findViewById(R.id.desc);
             box=itemView.findViewById(R.id.Box);
+            icon=itemView.findViewById(R.id.compalint_state_icon);
+            done=itemView.findViewById(R.id.done);
+            notdone=itemView.findViewById(R.id.notdone);
             itemView.setOnClickListener(this);
         }
 
         @Override
         public void onClick(View view) {
             if (mClickListener != null) mClickListener.onItemClick(view, getAdapterPosition());
+            done.setHeight(ViewGroup.LayoutParams.WRAP_CONTENT);
+            notdone.setHeight(10);
+            notdone.setWidth(10);
+            done.setText("Hello");
         }
     }
 

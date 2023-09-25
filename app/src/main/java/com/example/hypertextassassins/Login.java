@@ -45,7 +45,6 @@ public class Login extends AppCompatActivity {
                 if (student_id.getEditText().getText().length() < 9) {
 
                     student_id.setError("Student Id Can't be less than 9");
-                    Signin.setEnabled(false);
                 } else if (student_id.getEditText().getText().length() == 9) {
                     student_id.setErrorEnabled(false);
                     password.getEditText().addTextChangedListener(new TextWatcher() {
